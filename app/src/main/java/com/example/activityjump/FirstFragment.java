@@ -122,7 +122,7 @@ public class FirstFragment extends Fragment {
         super.onDetach();
         Toast.makeText(getActivity(), "fragment 1 onDetach", Toast.LENGTH_SHORT).show();
 
-        Log.d("FirstFragment", "onDetach");
+        Log.d("FirstFragment", "FirstFragment onDetach");
     }
 
     @Override
