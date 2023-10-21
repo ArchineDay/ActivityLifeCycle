@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SecondActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Activity2!"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="跳转回Activity1" />
+
+    <Button
+        android:id="@+id/buttonToFragment1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fragment1" />
+
+    <Button
+        android:id="@+id/buttonToFragment2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fragment2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_container"
+        android:orientation="horizontal" />
+
+</LinearLayout>
