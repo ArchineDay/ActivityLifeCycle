@@ -33,10 +33,18 @@
         android:layout_height="wrap_content"
         android:text="Fragment2" />
 
+    <Button
+        android:id="@+id/buttonToDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dialog" />
+
+
     <LinearLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/fragment_container"
         android:orientation="horizontal" />
+
 
 </LinearLayout>
