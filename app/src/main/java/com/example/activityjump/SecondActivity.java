@@ -6,6 +6,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -16,6 +18,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SecondActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -31,16 +36,18 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
-    private void bindView(){
+    private void bindView() {
         Button button2 = findViewById(R.id.button2);//回activity1的按钮
         Button buttonToFragment1 = findViewById(R.id.buttonToFragment1);
         Button buttonToFragment2 = findViewById(R.id.buttonToFragment2);
         Button buttonToDialog = findViewById(R.id.buttonToDialog);
+        Button buttonToRecyclerView = findViewById(R.id.buttonToRecyclerview);
 
         button2.setOnClickListener(this);
         buttonToFragment1.setOnClickListener(this);
         buttonToFragment2.setOnClickListener(this);
         buttonToDialog.setOnClickListener(this);
+        buttonToRecyclerView.setOnClickListener(this);
     }
 
     @Override
@@ -48,6 +55,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         super.onStart();
         Toast.makeText(this, "activity 2 onStart", Toast.LENGTH_SHORT).show();
         Log.d("activity 2", "activity 2 onStart");
+
     }
 
     @Override
@@ -90,7 +98,6 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
-
         if (v.getId() == R.id.button2) {
             Intent intent = new Intent();
             intent.setClass(this, MainActivity.class);
@@ -103,7 +110,12 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, secondFragment).commit();
         } else if (v.getId() == R.id.buttonToDialog) {
             tipDialog();
+        }else if (v.getId()==R.id.buttonToRecyclerview){
+            Intent intent = new Intent();
+            intent.setClass(this, RecyclerViewActivity.class);
+            startActivity(intent);
         }
+
 
     }
 
@@ -160,6 +172,4 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         });
         dialog.show();                              //显示对话框
     }
-
-
 }
