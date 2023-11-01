@@ -1,4 +1,4 @@
-package com.example.activityjump.recyclerView;
+package com.example.activityjump.recyclerview;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

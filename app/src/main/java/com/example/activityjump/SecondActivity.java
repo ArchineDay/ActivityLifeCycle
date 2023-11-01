@@ -14,7 +14,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.activityjump.recyclerView.RecyclerViewActivity;
+import com.example.activityjump.fragment.FirstFragment;
+import com.example.activityjump.fragment.SecondFragment;
+import com.example.activityjump.recyclerview.RecyclerViewActivity;
 
 public class SecondActivity extends AppCompatActivity implements View.OnClickListener {
 

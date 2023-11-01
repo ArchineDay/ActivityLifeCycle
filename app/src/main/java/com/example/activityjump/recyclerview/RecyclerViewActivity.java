@@ -1,4 +1,4 @@
-package com.example.activityjump.recyclerView;
+package com.example.activityjump.recyclerview;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
