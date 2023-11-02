@@ -3,6 +3,11 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+
+        mavenCentral()
+        maven (  "https://maven.aliyun.com/repository/public")
+        maven (  "https://maven.aliyun.com/repository/google")
+        maven (  "https://repo.huaweicloud.com/repository/maven")
     }
 }
 dependencyResolutionManagement {
@@ -10,6 +15,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        mavenCentral()
+        maven (  "https://maven.aliyun.com/repository/public")
+        maven (  "https://maven.aliyun.com/repository/google")
+        maven (  "https://repo.huaweicloud.com/repository/maven")
     }
 }
 

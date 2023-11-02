@@ -36,14 +36,11 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         Button button2 = findViewById(R.id.button2);//回activity1的按钮
         Button buttonToFragment1 = findViewById(R.id.buttonToFragment1);
         Button buttonToFragment2 = findViewById(R.id.buttonToFragment2);
-        Button buttonToDialog = findViewById(R.id.buttonToDialog);
-        Button buttonToRecyclerView = findViewById(R.id.buttonToRecyclerview);
 
         button2.setOnClickListener(this);
         buttonToFragment1.setOnClickListener(this);
         buttonToFragment2.setOnClickListener(this);
-        buttonToDialog.setOnClickListener(this);
-        buttonToRecyclerView.setOnClickListener(this);
+
     }
 
     @Override
@@ -104,68 +101,8 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         } else if (v.getId() == R.id.buttonToFragment2) {
             SecondFragment secondFragment = new SecondFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, secondFragment).commit();
-        } else if (v.getId() == R.id.buttonToDialog) {
-            tipDialog();
-        }else if (v.getId()==R.id.buttonToRecyclerview){
-            Intent intent = new Intent();
-            intent.setClass(this, RecyclerViewActivity.class);
-            startActivity(intent);
         }
 
 
-    }
-
-    /**
-     * 提示对话框
-     */
-    public void tipDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(SecondActivity.this);
-        builder.setTitle("提示：");
-        builder.setMessage("这是一个普通对话框，");
-        builder.setIcon(R.mipmap.ic_launcher);
-        builder.setCancelable(true);            //点击对话框以外的区域是否让对话框消失
-
-        //设置正面按钮
-        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(SecondActivity.this, "你点击了确定", Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
-            }
-        });
-        //设置反面按钮
-        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(SecondActivity.this, "你点击了取消", Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
-            }
-        });
-        //设置中立按钮
-        builder.setNeutralButton("保密", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(SecondActivity.this, "你选择了中立", Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
-            }
-        });
-
-
-        AlertDialog dialog = builder.create();      //创建AlertDialog对象
-        //对话框显示的监听事件
-        dialog.setOnShowListener(new DialogInterface.OnShowListener() {
-            @Override
-            public void onShow(DialogInterface dialog) {
-                Log.e(TAG, "对话框显示了");
-            }
-        });
-        //对话框消失的监听事件
-        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-            @Override
-            public void onCancel(DialogInterface dialog) {
-                Log.e(TAG, "对话框消失了");
-            }
-        });
-        dialog.show();                              //显示对话框
     }
 }

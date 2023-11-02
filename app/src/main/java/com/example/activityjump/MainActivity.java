@@ -1,13 +1,19 @@
 package com.example.activityjump;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.activityjump.recyclerview.RecyclerViewActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -16,13 +22,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button1 = findViewById(R.id.button1);
-
-        button1.setOnClickListener(this);
+        bindView();
 
         Toast.makeText(this, "activity 1 onCreate", Toast.LENGTH_SHORT).show();
         //Snackbar.make(button1,"activity 1 onCreate",Snackbar.LENGTH_SHORT).show();
         Log.d("activity 1", "activity 1 onCreate");
+    }
+
+    private void bindView() {
+        Button button1 = findViewById(R.id.button1);
+        Button buttonToDialog = findViewById(R.id.buttonToDialog);
+        Button buttonToRecyclerView = findViewById(R.id.buttonToRecyclerview);
+//        Button buttonToMatisse = findViewById(R.id.buttonToMatisse);
+
+        findViewById(R.id.buttonToMatisse).setOnClickListener(this);
+        button1.setOnClickListener(this);
+        buttonToDialog.setOnClickListener(this);
+        buttonToRecyclerView.setOnClickListener(this);
+//        buttonToMatisse.setOnClickListener(this);
     }
 
     @Override
@@ -56,28 +73,91 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Toast.makeText(this,"activity 1 onDestroy",Toast.LENGTH_SHORT).show();
-        Log.d("activity 1","activity 1 onDestroy");
+        Toast.makeText(this, "activity 1 onDestroy", Toast.LENGTH_SHORT).show();
+        Log.d("activity 1", "activity 1 onDestroy");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
         Toast.makeText(this, "activity 1 onRestart", Toast.LENGTH_SHORT).show();
-        Log.d("activity 1","activity 1 onRestart");
+        Log.d("activity 1", "activity 1 onRestart");
     }
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent();
-        intent.setClass(this, SecondActivity.class);
-        startActivity(intent);
+
+        if (v.getId() == R.id.button1) {
+            //跳转到activity2
+            Intent intent = new Intent();
+            intent.setClass(this, SecondActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.buttonToDialog) {
+            tipDialog();
+        } else if (v.getId() == R.id.buttonToRecyclerview) {
+            Intent intent = new Intent();
+            intent.setClass(this, RecyclerViewActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.buttonToMatisse) {
+            Intent intent = new Intent();
+            intent.setClass(this, MatisseActivity.class);
+            startActivity(intent);
+        }
     }
 
+    /**
+     * 提示对话框
+     */
+    public void tipDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("提示：");
+        builder.setMessage("这是一个普通对话框，");
+        builder.setIcon(R.mipmap.ic_launcher);
+        builder.setCancelable(true);            //点击对话框以外的区域是否让对话框消失
+
+        //设置正面按钮
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MainActivity.this, "你点击了确定", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+        //设置反面按钮
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MainActivity.this, "你点击了取消", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+        //设置中立按钮
+        builder.setNeutralButton("保密", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MainActivity.this, "你选择了中立", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
 
 
-
-
+        AlertDialog dialog = builder.create();      //创建AlertDialog对象
+        //对话框显示的监听事件
+        dialog.setOnShowListener(new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface dialog) {
+                Log.e(TAG, "对话框显示了");
+            }
+        });
+        //对话框消失的监听事件
+        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                Log.e(TAG, "对话框消失了");
+            }
+        });
+        dialog.show();                              //显示对话框
+    }
 
 
 }
