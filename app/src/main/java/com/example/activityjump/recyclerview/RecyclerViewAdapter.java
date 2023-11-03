@@ -19,7 +19,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private Context context;
     private List list;
 
-    public RecyclerViewAdapter(Context context,List list) {
+    public RecyclerViewAdapter(Context context, List list) {
         this.list = list;
         this.context = context;
     }
@@ -35,9 +35,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.InnerHolder holder, @SuppressLint("RecyclerView") int position) {
-        holder.name.setText((String) list.get(position));
-        holder.address.setText((String) list.get(position));
-        holder.position = position;
+        RecyclerViewBean bean = (RecyclerViewBean) list.get(position);
+        holder.name.setText(bean.name);
+        holder.content.setText(bean.content);
+//        holder.position = position;
     }
 
     @Override
@@ -48,12 +49,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public class InnerHolder extends RecyclerView.ViewHolder {
 
         TextView name;
-        TextView address;
+        TextView content;
         int position;
+
         public InnerHolder(@NonNull View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.device_name);
-            address = itemView.findViewById(R.id.device_address);
+            name = itemView.findViewById(R.id.textView);
+            content = itemView.findViewById(R.id.textView2);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
