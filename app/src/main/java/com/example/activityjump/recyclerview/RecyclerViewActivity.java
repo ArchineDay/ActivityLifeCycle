@@ -1,6 +1,7 @@
 package com.example.activityjump.recyclerview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -35,12 +36,14 @@ public class RecyclerViewActivity extends AppCompatActivity {
 //        arrayList.add("1");
 //        arrayList.add("2");
 //        arrayList.add("3");
-//        arrayList.add("4");
-//        arrayList.add("5");
-//        arrayList.add("6");
 
-        recyclerViewAdapter = new RecyclerViewAdapter(this, beanList);
+        recyclerViewAdapter = new RecyclerViewAdapter(beanList);
         recyclerView.setAdapter(recyclerViewAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        //设置布局管理器
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(RecyclerView.HORIZONTAL);
+//        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+        recyclerView.setLayoutManager(layoutManager);
     }
 }

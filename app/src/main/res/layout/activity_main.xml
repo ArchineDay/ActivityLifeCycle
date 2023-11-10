@@ -38,4 +38,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Matisse" />
+
+    <Button
+        android:id="@+id/buttonToProgressbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Progressbar" />
 </LinearLayout>

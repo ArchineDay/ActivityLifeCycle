@@ -5,7 +5,7 @@
     <string name="hello_second_fragment">Hello Second fragment</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <style name="Matisse.Dracula" parent="Theme.AppCompat.NoActionBar">
+    <style name="Matisse.Dracula" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/dracula_primary</item>
         <item name="colorPrimaryDark">@color/dracula_primary_dark</item>
         <item name="toolbar">@style/Toolbar.Dracula</item>
@@ -14,7 +14,7 @@
         <item name="album.element.color">@android:color/white</item>
         <item name="album.thumbnail.placeholder">@color/dracula_album_dropdown_thumbnail_placeholder</item>
         <item name="album.emptyView">@drawable/ic_empty_dracula</item>
-        <item name="album.emptyView.textColor">@color/dracula_album_empty_view</item>
+        <item name="album.emptyView.textColor">@color/dracula_album_empty_view</item>`
         <item name="item.placeholder">@color/dracula_item_placeholder</item>
         <item name="item.checkCircle.backgroundColor">@color/dracula_item_checkCircle_backgroundColor</item>
         <item name="item.checkCircle.borderColor">@color/dracula_item_checkCircle_borderColor</item>
@@ -27,5 +27,6 @@
         <item name="android:listPopupWindowStyle">@style/Popup.Dracula</item>
         <item name="listPopupWindowStyle">@style/Popup.Dracula</item>
         <item name="capture.textColor">@color/dracula_capture</item>
+
     </style>
 </resources>

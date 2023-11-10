@@ -13,6 +13,9 @@ import android.widget.RelativeLayout;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
 import com.zhihu.matisse.engine.impl.GlideEngine;
+import com.zhihu.matisse.engine.impl.PicassoEngine;
+import com.zhihu.matisse.filter.Filter;
+import com.zhihu.matisse.internal.entity.CaptureStrategy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -31,24 +34,10 @@ public class MatisseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_matisse);
 
         ll_addimages = findViewById(R.id.ll_addimages);
-        ll_images = findViewById(R.id.ll_images);
+        //ll_images = findViewById(R.id.ll_images);
+        ll_addimages.setOnClickListener(v -> {
 
-        ll_addimages.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Matisse.from(MatisseActivity.this)
-                        .choose(MimeType.ofImage())
-                        .countable(true)
-                        .maxSelectable(6)
-                        .gridExpectedSize(getResources().getDimensionPixelSize(R.dimen.grid_expected_size))
-                        .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
-                        .thumbnailScale(0.85f)
-                        .imageEngine(new GlideEngine())
-                        .showSingleMediaType(true)
-                        .maxOriginalSize(5)
-                        .theme(R.style.Matisse_Dracula)
-                        .forResult(1);
-            }
+
         });
     }
 

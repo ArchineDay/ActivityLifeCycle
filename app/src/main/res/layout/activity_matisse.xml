@@ -142,12 +142,12 @@
             android:text="点击添加图片"
             android:textAlignment="center"
             android:textColor="@color/black" />
-
-        <GridView
-            android:id="@+id/grid_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:numColumns="3"/>
     </LinearLayout>
+
+    <GridView
+        android:id="@+id/grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:numColumns="3"/>
 </LinearLayout>

@@ -33,12 +33,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button button1 = findViewById(R.id.button1);
         Button buttonToDialog = findViewById(R.id.buttonToDialog);
         Button buttonToRecyclerView = findViewById(R.id.buttonToRecyclerview);
+        Button buttonToProgressbar = findViewById(R.id.buttonToProgressbar);
 //        Button buttonToMatisse = findViewById(R.id.buttonToMatisse);
 
         findViewById(R.id.buttonToMatisse).setOnClickListener(this);
         button1.setOnClickListener(this);
         buttonToDialog.setOnClickListener(this);
         buttonToRecyclerView.setOnClickListener(this);
+        buttonToProgressbar.setOnClickListener(this);
 //        buttonToMatisse.setOnClickListener(this);
     }
 
@@ -101,6 +103,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v.getId() == R.id.buttonToMatisse) {
             Intent intent = new Intent();
             intent.setClass(this, MatisseActivity.class);
+            startActivity(intent);
+        }else if (v.getId() == R.id.buttonToProgressbar) {
+            Intent intent = new Intent();
+            intent.setClass(this, ProgressbarActivity.class);
             startActivity(intent);
         }
     }
