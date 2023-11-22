@@ -1,19 +1,26 @@
-package com.example.activityjump;
+package com.example.activityjump.progress;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import android.os.Message;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.activityjump.R;
 
 public class ProgressbarActivity extends AppCompatActivity {
 
     private ProgressBar progressBar;
+    private ProgressBar progressBarHorizontal;
+    private ProgressBar progressBarLarge;
+
+    private TextView mTextView;
 
     private int mProgress = 0;
 
@@ -26,33 +33,39 @@ public class ProgressbarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_progressbar);
 
         progressBar = findViewById(R.id.progressbar);
+        progressBarHorizontal =findViewById(R.id.progressbarHorizontal);
+        mTextView=findViewById(R.id.tv_progress);
+        progressBarLarge =findViewById(R.id.progressbarLarge);
         mHandler = new Handler() {
             @Override
-            public void handleMessage(android.os.Message msg) {
+            public void handleMessage(@NonNull android.os.Message msg) {
                 super.handleMessage(msg);
-                if (msg.what == 0x111) {
+                if (0x111 == msg.what) {
                     progressBar.setProgress(mProgress);
+                    progressBarHorizontal.setProgress(mProgress);
+                    mTextView.setText("当前进度为：" + mProgress + "%");
+                    progressBarLarge.setProgress(mProgress);
                 } else {
-                    Toast.makeText(ProgressbarActivity.this, "耗时操作已完成", Toast.LENGTH_SHORT).show();
-                    progressBar.setVisibility(View.GONE);
+//                    Toast.makeText(ProgressbarActivity.this, "耗时操作已完成", Toast.LENGTH_SHORT).show();
+//                    progressBar.setVisibility(View.GONE);
                 }
             }
         };
 
-        new Thread(new Runnable() {   //通过匿名内部类指定参数，实例化线程对象模拟耗时操作
+        new Thread(new Runnable() {
             @Override
             public void run() {
-                while (true) {   //实时获取耗时操作完成的百分比，直到耗时操作结束
-                    mProgress = doWork();  //使当前进度等于一个耗时操作，耗时操作的返回值就是完成的进度
+                while (true) {
+                    //实时获取耗时操作完成的百分比，直到耗时操作结束
+                    mProgress = doWork();
                     Message m = new Message();//实例化一个消息对象，用于更新进度条进度
-                    if (mProgress < 100) { //判断当前进度是否完成
-                        m.what = 0x111;  //设置消息代码，自定义的消息代码，识别不同的消息，一般以0x开头
-                        mHandler.sendMessage(m);//通过handler发送消息
-                    } else {
-                        m.what = 0x110;  //进度完成的消息代码
-                        mHandler.sendMessage(m);//发送消息
-                        break;//耗时操作完成后退出
+                    m.what=0x111;//设置消息代码
+
+                    if (mProgress > 100) {
+//                        m.what = 0x110;//进度完成的消息代码
+                        break;
                     }
+                    mHandler.sendMessage(m);//发送消息
                 }
             }
 
@@ -65,6 +78,6 @@ public class ProgressbarActivity extends AppCompatActivity {
                 }
                 return mProgress;
             }
-        }).start();//开启线程
+        }).start();
     }
 }
