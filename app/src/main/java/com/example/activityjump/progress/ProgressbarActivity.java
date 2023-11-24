@@ -20,7 +20,8 @@ public class ProgressbarActivity extends AppCompatActivity {
     private ProgressBar progressBarHorizontal;
     private ProgressBar progressBarLarge;
 
-    private TextView mTextView;
+    private TextView tvHorizontalProgressbar;
+    private TextView tvLargeProgressbar;
 
     private int mProgress = 0;
 
@@ -34,7 +35,8 @@ public class ProgressbarActivity extends AppCompatActivity {
 
         progressBar = findViewById(R.id.progressbar);
         progressBarHorizontal =findViewById(R.id.progressbarHorizontal);
-        mTextView=findViewById(R.id.tv_progress);
+        tvHorizontalProgressbar=findViewById(R.id.tv_progress);
+        tvLargeProgressbar=findViewById(R.id.tv_progress_large);
         progressBarLarge =findViewById(R.id.progressbarLarge);
         mHandler = new Handler() {
             @Override
@@ -43,7 +45,8 @@ public class ProgressbarActivity extends AppCompatActivity {
                 if (0x111 == msg.what) {
                     progressBar.setProgress(mProgress);
                     progressBarHorizontal.setProgress(mProgress);
-                    mTextView.setText("当前进度为：" + mProgress + "%");
+                    tvHorizontalProgressbar.setText("当前进度为：" + mProgress + "%");
+                    tvLargeProgressbar.setText( mProgress + "%");
                     progressBarLarge.setProgress(mProgress);
                 } else {
 //                    Toast.makeText(ProgressbarActivity.this, "耗时操作已完成", Toast.LENGTH_SHORT).show();
