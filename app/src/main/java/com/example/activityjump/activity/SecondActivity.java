@@ -1,12 +1,8 @@
-package com.example.activityjump;
+package com.example.activityjump.activity;
 
-import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
-
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,9 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.activityjump.R;
 import com.example.activityjump.fragment.FirstFragment;
 import com.example.activityjump.fragment.SecondFragment;
-import com.example.activityjump.recyclerview.RecyclerViewActivity;
 
 public class SecondActivity extends AppCompatActivity implements View.OnClickListener {
 

@@ -4,42 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".activity.ToastAndSnackActivity"
     android:orientation="vertical"
-    tools:context=".activity.SecondActivity">
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Activity2!"
-        android:textAlignment="center"
-        android:textSize="30sp" />
+    >
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonShortToast"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="跳转回Activity1" />
+        android:text="shortToast" />
 
     <Button
-        android:id="@+id/buttonToFragment1"
+        android:id="@+id/buttonLongToast"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fragment1" />
+        android:text="longToast" />
 
     <Button
-        android:id="@+id/buttonToFragment2"
+        android:id="@+id/buttonShortSnack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fragment2" />
+        android:text="shortSnack" />
 
-
-
-
-    <LinearLayout
-        android:id="@+id/fragment_container"
+    <Button
+        android:id="@+id/buttonLongSnack"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal" />
+        android:layout_height="wrap_content"
+        android:text="longSnack" />
 
 </LinearLayout>

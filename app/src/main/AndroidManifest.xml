@@ -21,22 +21,25 @@
         android:theme="@style/Theme.ActivityJump"
         tools:targetApi="31" >
         <activity
-            android:name=".progress.ProgressbarActivity"
+            android:name=".activity.ToastAndSnackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ProgressbarActivity"
             android:exported="false" />
         <activity
             android:name=".Progressbar"
             android:exported="false" />
         <activity
-            android:name=".MatisseActivity"
+            android:name=".activity.MatisseActivity"
             android:exported="false" />
         <activity
             android:name=".recyclerview.RecyclerViewActivity"
             android:exported="false" />
         <activity
-            android:name=".SecondActivity"
+            android:name=".activity.SecondActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

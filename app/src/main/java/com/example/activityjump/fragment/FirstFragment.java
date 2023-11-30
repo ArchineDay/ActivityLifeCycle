@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -89,11 +90,21 @@ public class FirstFragment extends Fragment {
 
         Log.d("FirstFragment", "FirstFragment onPause");
     }
+    public void showLongToast(int resId){
+        Toast toast = Toast.makeText(getActivity().getApplicationContext(), resId, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.TOP,0, 0);
+        toast.show();
+    }
 
+    private void showToast(Context context,String text) {
+        Toast toast = Toast.makeText(context,text,Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER,0,0);
+        toast.show();
+    }
     @Override
     public void onStart() {
         super.onStart();
-        Toast.makeText(getActivity(), "fragment 1 onStart", Toast.LENGTH_SHORT).show();
+        showLongToast(R.string.app_name);
 
         Log.d("FirstFragment", "FirstFragment onStart");
     }

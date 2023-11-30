@@ -1,4 +1,4 @@
-package com.example.activityjump;
+package com.example.activityjump.activity;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.example.activityjump.R;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
 import com.zhihu.matisse.engine.impl.GlideEngine;

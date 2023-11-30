@@ -1,4 +1,4 @@
-package com.example.activityjump.progress;
+package com.example.activityjump.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".activity.MainActivity"
     android:orientation="vertical">
 
 
@@ -44,4 +44,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Progressbar" />
+
+    <Button
+        android:id="@+id/buttonToToastAndSnack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ToastAndSnack" />
 </LinearLayout>
