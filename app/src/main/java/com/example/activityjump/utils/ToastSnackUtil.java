@@ -47,7 +47,7 @@ public class ToastSnackUtil {
     public  void showShortSnack(View snackView, String text) {
         Snackbar snackbar = Snackbar.make(snackView, text, Snackbar.LENGTH_SHORT);
         View snackbarView = snackbar.getView();
-        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(snackbarView.getLayoutParams().width, snackbarView.getLayoutParams().height);
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
         params.gravity = Gravity.CENTER;
         snackbarView.setLayoutParams(params);
         snackbar.show();
@@ -56,7 +56,9 @@ public class ToastSnackUtil {
     public  void showLongSnack(View snackView, String text) {
         Snackbar snackbar = Snackbar.make(snackView, text, Snackbar.LENGTH_LONG);
         View snackbarView = snackbar.getView();
-        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(snackbarView.getLayoutParams().width, snackbarView.getLayoutParams().height);
+
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+        //        toast.setGravity(Gravity.TOP, 0, ToolUtil.dip2px(context, 80));
         params.gravity = Gravity.CENTER;
         snackbarView.setLayoutParams(params);
         snackbar.show();

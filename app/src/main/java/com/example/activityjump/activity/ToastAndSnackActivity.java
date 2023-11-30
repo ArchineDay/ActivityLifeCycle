@@ -23,12 +23,14 @@ public class ToastAndSnackActivity extends AppCompatActivity {
             toastSnackUtil.showLongToast("long toast");
         });
 
-        findViewById(R.id.buttonShortSnack).setOnClickListener(v -> {
-            toastSnackUtil.showShortSnack(findViewById(R.id.buttonShortSnack), "short snack");
+        findViewById(R.id.shortSnackButton).setOnClickListener(v -> {
+            toastSnackUtil.showShortSnack(findViewById(android.R.id.content), "short snack");
         });
 
-        findViewById(R.id.buttonLongSnack).setOnClickListener(v -> {
-            toastSnackUtil.showLongSnack(findViewById(R.id.buttonLongSnack), "long snack");
+        findViewById(R.id.longSnackButton).setOnClickListener(v -> {
+            toastSnackUtil.showLongSnack(findViewById(android.R.id.content), "long snack");
         });
+
+
     }
 }

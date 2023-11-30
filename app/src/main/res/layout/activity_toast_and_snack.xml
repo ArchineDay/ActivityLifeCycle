@@ -21,13 +21,14 @@
         android:text="longToast" />
 
     <Button
-        android:id="@+id/buttonShortSnack"
+        android:id="@+id/shortSnackButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="shortSnack" />
 
+
     <Button
-        android:id="@+id/buttonLongSnack"
+        android:id="@+id/longSnackButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="longSnack" />
