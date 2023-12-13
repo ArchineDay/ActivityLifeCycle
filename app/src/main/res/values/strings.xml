@@ -37,5 +37,8 @@
         <item name="listPopupWindowStyle">@style/Popup.Dracula</item>
         <item name="capture.textColor">@color/dracula_capture</item>
 
+
     </style>
+
+    <string name="swipe">当前缓存 %1$d</string>
 </resources>

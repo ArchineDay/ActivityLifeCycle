@@ -50,4 +50,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ToastAndSnack" />
+
+    <Button
+        android:id="@+id/buttonToSwipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Swipe" />
 </LinearLayout>
