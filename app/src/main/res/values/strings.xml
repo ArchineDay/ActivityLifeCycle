@@ -40,5 +40,5 @@
 
     </style>
 
-    <string name="swipe">当前缓存 %1$d</string>
+    <string name="swipe_cache">当前缓存 %1$s</string>
 </resources>
