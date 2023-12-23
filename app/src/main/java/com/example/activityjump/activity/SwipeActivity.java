@@ -27,7 +27,8 @@ public class SwipeActivity extends AppCompatActivity implements View.OnClickList
         findViewById(R.id.buttonClearCache).setOnClickListener(this);
 
         try {
-            cache.setText(String.format(this.getResources().getString(R.string.swipe_cache), "20mb"));
+//            cache.setText(String.format(this.getResources().getString(R.string.swipe_cache), "20mb"));
+            cache.setText(getString(R.string.url_wifi));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

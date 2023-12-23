@@ -122,6 +122,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(this,ToastAndSnackActivity.class));
         }else if (v.getId() ==R.id.buttonToSwipe){
             startActivity(new Intent(this,SwipeActivity.class));
+        }else if (v.getId() ==R.id.buttonToChronometer){
+            startActivity(new Intent(this,ChronometerActivity.class));
         }
     }
 
