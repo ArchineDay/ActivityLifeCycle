@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.buttonToMatisse).setOnClickListener(this);
         findViewById(R.id.buttonToToastAndSnack).setOnClickListener(this);
         findViewById(R.id.buttonToSwipe).setOnClickListener(this);
+        findViewById(R.id.buttonToChronometer).setOnClickListener(this);
+
         button1.setOnClickListener(this);
         buttonToDialog.setOnClickListener(this);
         buttonToRecyclerView.setOnClickListener(this);

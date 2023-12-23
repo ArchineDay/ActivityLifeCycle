@@ -30,7 +30,7 @@
             android:name=".activity.ProgressbarActivity"
             android:exported="false" />
         <activity
-            android:name=".Progressbar"
+            android:name=".activity.ChronometerActivity"
             android:exported="false" />
         <activity
             android:name=".activity.MatisseActivity"
