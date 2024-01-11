@@ -2,25 +2,28 @@ package com.example.activityjump.activity;
 
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.activityjump.R;
 import com.example.activityjump.recyclerview.RecyclerViewActivity;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.activityjump.utils.BlurryBgUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private ImageView dialogBg;
+    private Handler mHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        toastSnackUtil.showShortToast("short toast");
 //        ToastSnackUtil.showShortSnack(findViewById(R.id.button1), "short snack");
         Log.d("activity 1", "activity 1 onCreate");
+
+        //模糊背景
+        dialogBg = findViewById(R.id.iv_dialog_bg);
+
+        //创建activity先把对话框背景图设为不可见
+        dialogBg.setImageAlpha(0);
+        dialogBg.setVisibility(View.GONE);
+
+        //hanlder初始化
+        mHandler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                if (msg.what == 0) {
+                    dialogBg.setVisibility(View.GONE);
+                }
+            }
+        };
+
     }
 
     private void bindView() {
@@ -108,6 +130,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         } else if (v.getId() == R.id.buttonToDialog) {
             tipDialog();
+            BlurryBgUtil.handleBlur(MainActivity.this,dialogBg,mHandler);
         } else if (v.getId() == R.id.buttonToRecyclerview) {
             Intent intent = new Intent();
             intent.setClass(this, RecyclerViewActivity.class);
@@ -145,6 +168,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(MainActivity.this, "你点击了确定", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
+                BlurryBgUtil.hideBlur(dialogBg,mHandler);
             }
         });
         //设置反面按钮
@@ -153,6 +177,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(MainActivity.this, "你点击了取消", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
+                BlurryBgUtil.hideBlur(dialogBg,mHandler);
             }
         });
         //设置中立按钮
@@ -161,6 +186,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(MainActivity.this, "你选择了中立", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
+                BlurryBgUtil.hideBlur(dialogBg,mHandler);
             }
         });
 
@@ -180,8 +206,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.e(TAG, "对话框消失了");
             }
         });
-        dialog.show();                              //显示对话框
+        dialog.show();
     }
-
 
 }

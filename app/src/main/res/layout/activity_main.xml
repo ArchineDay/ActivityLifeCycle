@@ -7,6 +7,13 @@
     tools:context=".activity.MainActivity"
     android:orientation="vertical">
 
+    <!-- 这里的FrameLayout用于承载对话框的背景 -->
+        <ImageView
+            android:id="@+id/iv_dialog_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            />
 
 
     <TextView
