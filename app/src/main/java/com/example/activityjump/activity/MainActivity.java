@@ -155,9 +155,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(MainActivity.this, "你点击了确定", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
-                // 还原背景颜色
-                Window window = getWindow();
-                window.setBackgroundDrawable(getResources().getDrawable(R.drawable.shape_background_white_round));
             }
         });
         //设置反面按钮
@@ -166,9 +163,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(MainActivity.this, "你点击了取消", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
-                // 还原背景颜色
-                Window window = getWindow();
-                window.setBackgroundDrawable(getResources().getDrawable(R.drawable.shape_background_white_round));
             }
         });
         //设置中立按钮
@@ -177,9 +171,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(MainActivity.this, "你选择了中立", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
-                // 还原背景颜色
-                Window window = getWindow();
-                window.setBackgroundDrawable(getResources().getDrawable(R.drawable.shape_background_white_round));
             }
         });
 
@@ -199,7 +190,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.e(TAG, "对话框消失了");
             }
         });
-        dialog.show();                              //显示对话框
+
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                Log.e(TAG, "对话框销毁了");
+                // 还原背景颜色
+                Window window = getWindow();
+                window.setBackgroundDrawable(getResources().getDrawable(R.drawable.shape_background_white_round));
+            }
+        });
+        dialog.show();
     }
 
 
