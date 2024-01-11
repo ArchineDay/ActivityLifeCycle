@@ -144,10 +144,9 @@
             android:textColor="@color/black" />
     </LinearLayout>
 
-    <GridView
-        android:id="@+id/grid_view"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:numColumns="3"/>
+        android:textAlignment="center" />
 </LinearLayout>
