@@ -76,4 +76,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Chronometer" />
+
+    <Button
+        android:id="@+id/buttonToBlur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="blur" />
 </LinearLayout>

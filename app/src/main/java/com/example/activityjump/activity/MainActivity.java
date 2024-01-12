@@ -30,9 +30,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Toast.makeText(this, "activity 1 onCreate", Toast.LENGTH_SHORT).show();
 
-//        ToastSnackUtil toastSnackUtil = new ToastSnackUtil(this);
-//        toastSnackUtil.showShortToast("short toast");
-//        ToastSnackUtil.showShortSnack(findViewById(R.id.button1), "short snack");
         Log.d("activity 1", "activity 1 onCreate");
     }
 
@@ -47,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.buttonToToastAndSnack).setOnClickListener(this);
         findViewById(R.id.buttonToSwipe).setOnClickListener(this);
         findViewById(R.id.buttonToChronometer).setOnClickListener(this);
+        findViewById(R.id.buttonToBlur).setOnClickListener(this);
         blurView = findViewById(R.id.realtimeBlurView);
 
         button1.setOnClickListener(this);
@@ -66,35 +64,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onResume() {
         super.onResume();
-//        Toast.makeText(this, "activity 1 onResume", Toast.LENGTH_SHORT).show();
         Log.d("activity 1", "activity 1 onResume");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-//        Toast.makeText(this, "activity 1 onStop", Toast.LENGTH_SHORT).show();
         Log.d("activity 1", "activity 1 onStop");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-//        Toast.makeText(this, "activity 1 onPause", Toast.LENGTH_SHORT).show();
         Log.d("activity 1", "activity 1 onPause");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-//        Toast.makeText(this, "activity 1 onDestroy", Toast.LENGTH_SHORT).show();
         Log.d("activity 1", "activity 1 onDestroy");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-//        Toast.makeText(this, "activity 1 onRestart", Toast.LENGTH_SHORT).show();
         Log.d("activity 1", "activity 1 onRestart");
     }
 
@@ -127,6 +120,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(this,SwipeActivity.class));
         }else if (v.getId() ==R.id.buttonToChronometer){
             startActivity(new Intent(this,ChronometerActivity.class));
+        }else if (v.getId() ==R.id.buttonToBlur){
+            startActivity(new Intent(this,BlurActivity.class));
         }
     }
 }
