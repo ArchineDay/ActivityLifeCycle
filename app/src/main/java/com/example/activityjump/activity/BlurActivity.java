@@ -31,7 +31,7 @@ public class BlurActivity extends AppCompatActivity implements View.OnClickListe
         fastBlur.setOnClickListener(this);
         realtimeBlurView = findViewById(R.id.realtimeBlurView);
 
-        findViewById(R.id.blur1).setOnClickListener(this);
+        findViewById(R.id.realtimeBlur).setOnClickListener(this);
 
 
 //        //模糊背景
