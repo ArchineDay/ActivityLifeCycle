@@ -50,5 +50,6 @@ dependencies {
     implementation("com.blankj:utilcodex:1.31.1")
     implementation("jp.wasabeef:blurry:4.0.1")
     implementation("com.github.mmin18:realtimeblurview:1.2.1")
+    implementation("io.alterac.blurkit:blurkit:1.1.0")
 
 }
