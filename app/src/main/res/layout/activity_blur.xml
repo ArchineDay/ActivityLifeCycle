@@ -1,48 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".activity.BlurActivity">
 
-
-    <Button
-        android:id="@+id/fastBlur"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="fastBlur" />
-
-    <Button
-        android:id="@+id/blur1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="blur" />
-
-    <ImageView
+    <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:src="@drawable/ic_launcher_foreground"
-        android:background="@color/teal_200"
-        />
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/iv_dialog_bg"
-            android:src="@drawable/ic_launcher_foreground"
+        android:orientation="vertical"
+        >
+        <Button
+            android:id="@+id/fastBlur"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </FrameLayout>
+            android:layout_height="wrap_content"
+            android:text="fastBlur" />
 
-    <io.alterac.blurkit.BlurLayout
-        android:id="@+id/blurLayout"
+        <Button
+            android:id="@+id/realtimeBlur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="blur" />
+
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:src="@drawable/ic_launcher_foreground"
+            android:background="@color/teal_200"
+            />
+    </LinearLayout>>
+
+
+    <com.github.mmin18.widget.RealtimeBlurView
+        android:id="@+id/realtimeBlurView"
         android:layout_width="match_parent"
-        android:background="@color/teal_200"
-        android:layout_height="150dp"
+        android:layout_height="match_parent"
+        app:realtimeBlurRadius="20dp"
+        app:realtimeOverlayColor="#8000"
         android:visibility="gone"
         />
 
-</LinearLayout>
+<!--    <FrameLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_dialog_bg"-->
+<!--            android:src="@drawable/ic_launcher_foreground"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent" />-->
+<!--    </FrameLayout>-->
+
+</RelativeLayout>
