@@ -14,7 +14,14 @@
             android:layout_height="match_parent"
             android:visibility="gone"
             />
-
+    <com.github.mmin18.widget.RealtimeBlurView
+        android:id="@+id/realtimeBlurView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:realtimeBlurRadius="20dp"
+        app:realtimeOverlayColor="#8000"
+        android:visibility="gone"
+        />
 
     <TextView
         android:layout_width="match_parent"

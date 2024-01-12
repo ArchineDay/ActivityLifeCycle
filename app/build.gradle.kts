@@ -48,5 +48,7 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.15.1")
     implementation("androidx.test.ext:junit:1.1.5")
     implementation("com.blankj:utilcodex:1.31.1")
+    implementation("jp.wasabeef:blurry:4.0.1")
+    implementation("com.github.mmin18:realtimeblurview:1.2.1")
 
 }

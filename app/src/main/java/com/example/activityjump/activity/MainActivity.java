@@ -1,31 +1,25 @@
 package com.example.activityjump.activity;
 
-import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
-
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.example.activityjump.R;
 import com.example.activityjump.recyclerview.RecyclerViewActivity;
-import com.example.activityjump.utils.FastBlurUtility;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.activityjump.utils.DialogUtil;
+import com.example.activityjump.utils.FastBlurUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    View blurView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.buttonToToastAndSnack).setOnClickListener(this);
         findViewById(R.id.buttonToSwipe).setOnClickListener(this);
         findViewById(R.id.buttonToChronometer).setOnClickListener(this);
+        blurView = findViewById(R.id.realtimeBlurView);
 
         button1.setOnClickListener(this);
         buttonToDialog.setOnClickListener(this);
@@ -112,12 +107,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.setClass(this, SecondActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.buttonToDialog) {
-            tipDialog();
-
-            Bitmap blurBackgroundDrawer = FastBlurUtility.getBlurBackgroundDrawer(MainActivity.this);
-            //blurBackgroundDrawer为模糊后的背景图片
-            Window window = getWindow();
-            window.setBackgroundDrawable(new BitmapDrawable(MainActivity.this.getResources(), blurBackgroundDrawer));
+            DialogUtil.tipDialog(MainActivity.this,getWindow());
+//            blurView.setVisibility(View.VISIBLE);
         } else if (v.getId() == R.id.buttonToRecyclerview) {
             Intent intent = new Intent();
             intent.setClass(this, RecyclerViewActivity.class);
@@ -138,70 +129,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(this,ChronometerActivity.class));
         }
     }
-
-    /**
-     * 提示对话框
-     */
-    public void tipDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("提示：");
-        builder.setMessage("这是一个普通对话框，");
-        builder.setIcon(R.mipmap.ic_launcher);
-        builder.setCancelable(true);            //点击对话框以外的区域是否让对话框消失
-
-        //设置正面按钮
-        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(MainActivity.this, "你点击了确定", Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
-            }
-        });
-        //设置反面按钮
-        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(MainActivity.this, "你点击了取消", Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
-            }
-        });
-        //设置中立按钮
-        builder.setNeutralButton("保密", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(MainActivity.this, "你选择了中立", Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
-            }
-        });
-
-
-        AlertDialog dialog = builder.create();      //创建AlertDialog对象
-        //对话框显示的监听事件
-        dialog.setOnShowListener(new DialogInterface.OnShowListener() {
-            @Override
-            public void onShow(DialogInterface dialog) {
-                Log.e(TAG, "对话框显示了");
-            }
-        });
-        //对话框消失的监听事件
-        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-            @Override
-            public void onCancel(DialogInterface dialog) {
-                Log.e(TAG, "对话框消失了");
-            }
-        });
-
-        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-            @Override
-            public void onDismiss(DialogInterface dialog) {
-                Log.e(TAG, "对话框销毁了");
-                // 还原背景颜色
-                Window window = getWindow();
-                window.setBackgroundDrawable(getResources().getDrawable(R.drawable.shape_background_white_round));
-            }
-        });
-        dialog.show();
-    }
-
-
 }

@@ -6,7 +6,7 @@ import android.graphics.Matrix;
 import android.util.Log;
 import android.view.View;
 
-public class FastBlurUtility {
+public class FastBlurUtil {
  
  /**
   * 获得模糊化的背景图片
