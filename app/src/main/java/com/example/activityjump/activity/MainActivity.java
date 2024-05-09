@@ -3,19 +3,15 @@ package com.example.activityjump.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.activityjump.R;
 import com.example.activityjump.recyclerview.RecyclerViewActivity;
 import com.example.activityjump.utils.DialogUtil;
-import com.example.activityjump.utils.FastBlurUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -45,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.buttonToSwipe).setOnClickListener(this);
         findViewById(R.id.buttonToChronometer).setOnClickListener(this);
         findViewById(R.id.buttonToBlur).setOnClickListener(this);
+        findViewById(R.id.buttonToVasonic).setOnClickListener(this);
         blurView = findViewById(R.id.realtimeBlurView);
 
         button1.setOnClickListener(this);
@@ -122,6 +119,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(this,ChronometerActivity.class));
         }else if (v.getId() ==R.id.buttonToBlur){
             startActivity(new Intent(this,BlurActivity.class));
+        }else if (v.getId() ==R.id.buttonToVasonic){
+            startActivity(new Intent(this, SonicActivity.class));
         }
     }
 }

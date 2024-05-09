@@ -78,7 +78,7 @@ public class MatisseActivity extends AppCompatActivity {
                     if (readGranted != null && writeGranted != null && readGranted && writeGranted) {
                         // Both read and write permissions are granted.
                         try {
-                            runMatisse();
+//                            runMatisse();
                         } catch (Exception ex) {
                             ToastUtils.showLong(ex.getMessage());
                         }
@@ -103,7 +103,7 @@ public class MatisseActivity extends AppCompatActivity {
                                 && Objects.requireNonNull(result.get(Manifest.permission.READ_EXTERNAL_STORAGE)).equals(true)) {
                             //权限全部获取到之后的动作
                             try {
-                                runMatisse();
+//                                runMatisse();
                             } catch (Exception ex) {
                                 ToastUtils.showLong(ex.getMessage());
                             }
@@ -158,21 +158,21 @@ public class MatisseActivity extends AppCompatActivity {
     };
 
 
-    private void  runMatisse(){
-        Matisse.from(this)
-                .choose(MimeType.ofAll())
-                .countable(true)
-                .maxSelectablePerMediaType(MAX_IMAGE_COUNT, MAX_VIDEO_COUNT)
-                .gridExpectedSize(getResources().getDimensionPixelSize(R.dimen.grid_expected_size))
-                .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
-                .thumbnailScale(0.85f)
-                .imageEngine(new GlideEngine())
-                .showSingleMediaType(true)
-                .maxOriginalSize(5)
-                .theme(R.style.Matisse_Dracula)
-                .forResult(REQUEST_CODE_CHOOSE_IMAGES);
-
-    }
+//    private void  runMatisse(){
+//        Matisse.from(this)
+//                .choose(MimeType.ofAll())
+//                .countable(true)
+//                .maxSelectablePerMediaType(MAX_IMAGE_COUNT, MAX_VIDEO_COUNT)
+//                .gridExpectedSize(getResources().getDimensionPixelSize(R.dimen.grid_expected_size))
+//                .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
+//                .thumbnailScale(0.85f)
+//                .imageEngine(new GlideEngine())
+//                .showSingleMediaType(true)
+//                .maxOriginalSize(5)
+//                .theme(R.style.Matisse_Dracula)
+//                .forResult(REQUEST_CODE_CHOOSE_IMAGES);
+//
+//    }
 
 
 

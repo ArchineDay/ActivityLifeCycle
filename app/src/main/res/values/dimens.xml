@@ -1,5 +1,157 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="text_margin">16dp</dimen>
-    <dimen name="grid_expected_size">120dp</dimen>
+
+    <!-- textSize<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+    <dimen name="text_size_large_p2">34sp</dimen>
+    <dimen name="text_size_large_p1">30sp</dimen>
+    <dimen name="text_size_large">24sp</dimen>
+    <dimen name="text_size_huge">21sp</dimen>
+    <dimen name="text_size_big">19sp</dimen>
+    <dimen name="text_size_middle_2">18sp</dimen>
+    <dimen name="text_size_middle_1">17sp</dimen>
+    <dimen name="text_size_middle">16sp</dimen>
+    <dimen name="text_size_small_1">15sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_micro">12sp</dimen>
+    <dimen name="text_size_micro_1">11sp</dimen>
+    <dimen name="text_size_micro_2">10sp</dimen>
+    <dimen name="text_size_micro_3">9sp</dimen>
+    <dimen name="text_size_micro_4">8sp</dimen>
+    <dimen name="text_size_micro_5">7sp</dimen>
+
+    <!-- textSize>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+
+
+    <!-- padding<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+
+    <dimen name="padding_large">24dp</dimen>
+    <dimen name="padding_huge">15dp</dimen>
+    <dimen name="padding_big">9dp</dimen>
+    <dimen name="padding_middle">6dp</dimen>
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="padding_micro">2dp</dimen>
+
+    <!-- padding>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+
+
+    <!-- margin<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+    <dimen name="margin_large_3">120dp</dimen>
+    <dimen name="margin_large_2">36dp</dimen>
+    <dimen name="margin_large_1">30dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_huge_2">20dp</dimen>
+    <dimen name="margin_huge_1">18dp</dimen>
+    <dimen name="margin_huge">15dp</dimen>
+    <dimen name="margin_big_1">12dp</dimen>
+    <dimen name="margin_big">10dp</dimen>
+    <dimen name="margin_middle">6dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_micro">2dp</dimen>
+    <dimen name="margin_side">30dp</dimen>
+    <dimen name="margin_side_small">20dp</dimen>
+    <dimen name="margin_text">25dp</dimen>
+
+    <!-- margin>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+
+
+    <!-- topbar -->
+
+    <dimen name="topbar_height">50dp</dimen>
+    <dimen name="topbar_title_padding">50dp</dimen>
+    <dimen name="topbar_btn_min_width">40dp</dimen>
+    <dimen name="bottombar_height">68dp</dimen>
+    <dimen name="bottom_drag_min_width">80dp</dimen>
+    <dimen name="bottom_drag_max_height">100dp</dimen>
+    <dimen name="bottom_drag_height">78dp</dimen>
+
+    <!-- topbar -->
+
+
+    <!-- progress bar -->
+
+    <dimen name="pb_circle_topbar_width">25dp</dimen>
+    <dimen name="pb_circle_topbar_height">25dp</dimen>
+
+    <!-- progress bar -->
+
+
+    <!-- menu -->
+
+    <dimen name="top_menu_width">150dp</dimen>
+    <dimen name="top_menu_max_width">300dp</dimen>
+    <dimen name="top_menu_item_max_width">240dp</dimen>
+    <dimen name="top_menu_item_height">45dp</dimen>
+    <dimen name="top_menu_item_width">150dp</dimen>
+    <dimen name="top_menu_item_min_width">150dp</dimen>
+
+    <!-- menu -->
+
+
+    <!-- listView -->
+
+    <dimen name="item_message">60dp</dimen>
+    <dimen name="lv_refresh_header_view_height">60dp</dimen>
+    <dimen name="min_distance_y">24dp</dimen>
+    <dimen name="max_distance_y">120dp</dimen>
+    <!-- listView -->
+
+
+    <!-- common item -->
+    <dimen name="item_remind_tv_height">30dp</dimen>
+    <dimen name="item_height">45dp</dimen>
+    <dimen name="item_padding_left">42dp</dimen>
+    <dimen name="item_padding_right">12dp</dimen>
+    <dimen name="item_left_tv_padding">15dp</dimen>
+    <dimen name="item_right_img_padding_right">15dp</dimen>
+    <dimen name="item_padding_top">15dp</dimen>
+    <dimen name="item_padding_bottom">15dp</dimen>
+    <dimen name="item_right_tv_width">78dp</dimen>
+    <dimen name="item_distance">15dp</dimen>
+
+    <!-- common item -->
+
+    <dimen name="edit_item_padding_left">15dp</dimen>
+
+    <!-- content item <<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+    <dimen name="content_item_left_tv_padding_left">15dp</dimen>
+    <dimen name="content_item_right_img_padding_right">15dp</dimen>
+    <!-- content item >>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+
+
+    <!-- button -->
+
+    <dimen name="btn_bottom_padding">10dp</dimen>
+    <dimen name="btn_middle">24dp</dimen>
+    <!-- button -->
+
+
+    <!-- search bar <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+
+    <dimen name="search_bar_et_height">36dp</dimen>
+
+    <!-- search bar >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+
+    <dimen name="grid_picker_content_height">300dp</dimen>
+    <dimen name="radius">3dp</dimen>
+
+    <!--shooting box-->
+    <dimen name="shooting_box_border">40dp</dimen>
+
+
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="radius_1">15dp</dimen>
+    <dimen name="radius_2">18dp</dimen>
+    <dimen name="radius_3">20dp</dimen>
+    <dimen name="radius_4">25dp</dimen>
+    <dimen name="radius_5">28dp</dimen>
+    <dimen name="radius_6">30dp</dimen>
+    <dimen name="radius_7">32dp</dimen>
+    <dimen name="radius_8">36dp</dimen>
+    <dimen name="radius_9">38dp</dimen>
+    <dimen name="radius_10">40dp</dimen>
+
+
+
+    <!-- Height >>>>>>>>>>>>>>>>2023//11/24>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+    <dimen name="max_height">400dp</dimen>
+    <dimen name="min_height">70dp</dimen>
 </resources>

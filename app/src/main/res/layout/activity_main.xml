@@ -82,4 +82,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="blur" />
+
+    <Button
+        android:id="@+id/buttonToVasonic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vasonic" />
 </LinearLayout>

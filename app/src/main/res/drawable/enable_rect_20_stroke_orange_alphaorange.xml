@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="true" android:drawable="@drawable/sel_rect_20_stroke_orange_alphaorange"></item>
+    <item android:state_enabled="false" android:drawable="@drawable/rect_30_all_gray_none"></item>
+</selector>

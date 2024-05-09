@@ -1,0 +1,11 @@
+<level-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:maxLevel="0" android:drawable="@color/transparent" />
+    <item android:maxLevel="1" android:drawable="@drawable/icon_hd_break" />
+    <item android:maxLevel="2" android:drawable="@drawable/icon_sync_4g_hd" />
+    <item android:maxLevel="3" android:drawable="@drawable/icon_hd" />
+    <item android:maxLevel="4" android:drawable="@drawable/icon_video_break" />
+    <item android:maxLevel="5" android:drawable="@drawable/icon_video_thum" />
+    <item android:maxLevel="6" android:drawable="@drawable/icon_sync_4g_video" />
+    <item android:maxLevel="7" android:drawable="@drawable/icon_video_original" />
+
+</level-list>
