@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.activityjump.R;
 import com.example.activityjump.recyclerview.RecyclerViewActivity;
+import com.example.activityjump.sonic.SonicActivity;
 import com.example.activityjump.utils.DialogUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {

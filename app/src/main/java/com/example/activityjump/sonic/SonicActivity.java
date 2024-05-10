@@ -11,7 +11,7 @@
  *
  */
 
-package com.example.activityjump.activity;
+package com.example.activityjump.sonic;
 
 import android.Manifest;
 import android.app.Activity;
@@ -30,10 +30,6 @@ import androidx.annotation.NonNull;
 
 import com.example.activityjump.R;
 
-import com.example.activityjump.sonic.HostSonicRuntime;
-import com.example.activityjump.sonic.SonicJavaScriptInterface;
-import com.example.activityjump.sonic.UrlListAdapter;
-import com.example.activityjump.sonic.UrlSelector;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.tencent.sonic.sdk.SonicConfig;
 import com.tencent.sonic.sdk.SonicEngine;

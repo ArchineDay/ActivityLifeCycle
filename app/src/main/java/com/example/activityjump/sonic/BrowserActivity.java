@@ -11,7 +11,7 @@
  *
  */
 
-package com.example.activityjump.activity;
+package com.example.activityjump.sonic;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -32,9 +32,6 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.activityjump.R;
-import com.example.activityjump.sonic.HostSonicRuntime;
-import com.example.activityjump.sonic.SonicJavaScriptInterface;
-import com.example.activityjump.sonic.SonicSessionClientImpl;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.tencent.sonic.sdk.SonicCacheInterceptor;
 import com.tencent.sonic.sdk.SonicConfig;

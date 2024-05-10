@@ -47,10 +47,10 @@
             android:name=".activity.SecondActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.SonicActivity"
+            android:name=".sonic.SonicActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.BrowserActivity"
+            android:name=".sonic.BrowserActivity"
             android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
