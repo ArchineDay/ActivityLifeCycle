@@ -126,7 +126,7 @@ public class HostSonicRuntime extends SonicRuntime {
 
     @Override
     public File getSonicCacheDir() {
-        File externalStoragePublicDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+        File externalStoragePublicDirectory =context.getExternalCacheDir();
         String path = externalStoragePublicDirectory + File.separator + "sonic/";
             File file = new File(path.trim());
             Log.d("HostSonicRuntime", "getSonicCacheDir: " + file.getAbsolutePath());
