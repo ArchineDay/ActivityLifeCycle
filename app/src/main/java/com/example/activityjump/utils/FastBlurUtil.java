@@ -1,4 +1,4 @@
-package com.example.activityjump.utils;
+package com.example.activitylifecycle.utils;
 
 import android.app.Activity;
 import android.graphics.Bitmap;

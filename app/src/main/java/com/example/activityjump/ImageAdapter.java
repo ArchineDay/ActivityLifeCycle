@@ -1,4 +1,4 @@
-package com.example.activityjump;// ImageAdapter.java
+package com.example.activitylifecycle;// ImageAdapter.java
 import android.content.Context;
 import android.net.Uri;
 import android.view.LayoutInflater;

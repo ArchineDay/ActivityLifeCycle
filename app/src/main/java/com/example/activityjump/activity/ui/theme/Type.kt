@@ -1,4 +1,4 @@
-package com.example.activityjump.activity.ui.theme
+package com.example.activitylifecycle.activity.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

@@ -1,6 +1,6 @@
-package com.example.activityjump.test;
+package com.example.activitylifecycle.test;
 
-import com.example.activityjump.thread.RunnableDemo;
+import com.example.activitylifecycle.thread.RunnableDemo;
 
 public class TestThread {
     public static void main(String[] args) {

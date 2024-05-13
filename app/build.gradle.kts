@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.activityjump"
+    namespace = "com.example.activitylifecycle"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.activityjump"
+        applicationId = "com.example.activitylifecycle"
         minSdk = 24
         targetSdk = 31
         versionCode = 1

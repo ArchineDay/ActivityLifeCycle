@@ -1,4 +1,4 @@
-package com.example.activityjump.recyclerview;
+package com.example.activitylifecycle.recyclerview;
 
 public class RecyclerViewBean {
     public String name;

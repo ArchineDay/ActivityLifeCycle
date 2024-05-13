@@ -1,4 +1,4 @@
-package com.example.activityjump.activity;
+package com.example.activitylifecycle.activity;
 
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -10,8 +10,8 @@ import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.activityjump.R;
-import com.example.activityjump.utils.ToastSnackUtil;
+import com.example.activitylifecycle.R;
+import com.example.activitylifecycle.utils.ToastSnackUtil;
 
 public class ChronometerActivity extends AppCompatActivity implements View.OnClickListener {
 

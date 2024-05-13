@@ -11,7 +11,7 @@
 // *
 // */
 //
-//package com.example.activityjump.demo;
+//package com.example.activitylifecycle.demo;
 //
 //import android.Manifest;
 //import android.app.Activity;
@@ -27,8 +27,8 @@
 //import android.widget.Button;
 //import android.widget.Toast;
 //
-//import com.example.activityjump.sonic.UrlListAdapter;
-//import com.example.activityjump.sonic.UrlSelector;
+//import com.example.activitylifecycle.sonic.UrlListAdapter;
+//import com.example.activitylifecycle.sonic.UrlSelector;
 //import com.tencent.sonic.R;
 //import com.tencent.sonic.sdk.SonicConfig;
 //import com.tencent.sonic.sdk.SonicEngine;

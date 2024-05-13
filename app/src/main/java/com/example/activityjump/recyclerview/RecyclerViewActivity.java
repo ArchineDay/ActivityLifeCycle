@@ -1,4 +1,4 @@
-package com.example.activityjump.recyclerview;
+package com.example.activitylifecycle.recyclerview;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.example.activityjump.R;
+import com.example.activitylifecycle.R;
 
 import java.util.ArrayList;
 import java.util.List;

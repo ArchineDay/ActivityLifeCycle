@@ -1,4 +1,4 @@
-package com.example.activityjump.activity;
+package com.example.activitylifecycle.activity;
 
 import android.Manifest;
 import android.annotation.TargetApi;
@@ -16,9 +16,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.blankj.utilcode.util.ToastUtils;
-import com.example.activityjump.R;
-import com.example.activityjump.recyclerview.RecyclerViewAdapter;
-import com.example.activityjump.recyclerview.RecyclerViewBean;
+import com.example.activitylifecycle.R;
+import com.example.activitylifecycle.recyclerview.RecyclerViewAdapter;
+import com.example.activitylifecycle.recyclerview.RecyclerViewBean;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
 import com.zhihu.matisse.engine.impl.GlideEngine;

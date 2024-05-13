@@ -1,4 +1,4 @@
-package com.example.activityjump.activity;
+package com.example.activitylifecycle.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,9 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.activityjump.R;
-import com.example.activityjump.fragment.FirstFragment;
-import com.example.activityjump.fragment.SecondFragment;
+import com.example.activitylifecycle.R;
+import com.example.activitylifecycle.fragment.FirstFragment;
+import com.example.activitylifecycle.fragment.SecondFragment;
 
 public class SecondActivity extends AppCompatActivity implements View.OnClickListener {
 

@@ -1,4 +1,4 @@
-package com.example.activityjump.utils;
+package com.example.activitylifecycle.utils;
 
 import android.content.Context;
 import android.os.Environment;

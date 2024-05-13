@@ -1,4 +1,4 @@
-package com.example.activityjump.activity;
+package com.example.activitylifecycle.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,10 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.activityjump.R;
-import com.example.activityjump.recyclerview.RecyclerViewActivity;
-import com.example.activityjump.sonic.SonicActivity;
-import com.example.activityjump.utils.DialogUtil;
+import com.example.activitylifecycle.R;
+import com.example.activitylifecycle.recyclerview.RecyclerViewActivity;
+import com.example.activitylifecycle.sonic.SonicActivity;
+import com.example.activitylifecycle.utils.DialogUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

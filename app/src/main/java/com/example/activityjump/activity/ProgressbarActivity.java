@@ -1,4 +1,4 @@
-package com.example.activityjump.activity;
+package com.example.activitylifecycle.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +12,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.activityjump.R;
+import com.example.activitylifecycle.R;
 
 public class ProgressbarActivity extends AppCompatActivity {
 

@@ -22,6 +22,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ActivityJump"
+rootProject.name = "ActivityLifeCycle"
 include(":app")
  

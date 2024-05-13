@@ -1,4 +1,4 @@
-package com.example.activityjump.utils;
+package com.example.activitylifecycle.utils;
 
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
-import com.example.activityjump.R;
+import com.example.activitylifecycle.R;
 
 public class DialogUtil{
     public static void tipDialog(Context context,Window window) {

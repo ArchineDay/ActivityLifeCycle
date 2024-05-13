@@ -1,4 +1,4 @@
-package com.example.activityjump.fragment;
+package com.example.activitylifecycle.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.activityjump.R;
+import com.example.activitylifecycle.R;
 
 /**
  * A simple {@link Fragment} subclass.

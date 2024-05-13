@@ -1,4 +1,4 @@
-package com.example.activityjump.thread;
+package com.example.activitylifecycle.thread;
 
 public class RunnableDemo extends Thread {
     private Thread thread;

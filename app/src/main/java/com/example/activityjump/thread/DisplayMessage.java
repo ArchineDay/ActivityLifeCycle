@@ -1,4 +1,4 @@
-package com.example.activityjump.thread;
+package com.example.activitylifecycle.thread;
 
 // 文件名 : DisplayMessage.java
 // 通过实现 Runnable 接口创建线程

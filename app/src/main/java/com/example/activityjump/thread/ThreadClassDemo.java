@@ -1,4 +1,4 @@
-package com.example.activityjump.thread;
+package com.example.activitylifecycle.thread;
 
 // 文件名 : ThreadClassDemo.java
 public class ThreadClassDemo {

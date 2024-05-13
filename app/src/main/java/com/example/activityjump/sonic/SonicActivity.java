@@ -11,7 +11,7 @@
  *
  */
 
-package com.example.activityjump.sonic;
+package com.example.activitylifecycle.sonic;
 
 import android.Manifest;
 import android.app.Activity;
@@ -28,7 +28,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.example.activityjump.R;
+import com.example.activitylifecycle.R;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.tencent.sonic.sdk.SonicConfig;

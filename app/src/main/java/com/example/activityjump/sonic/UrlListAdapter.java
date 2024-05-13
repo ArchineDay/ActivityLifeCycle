@@ -11,7 +11,7 @@
  *
  */
 
-package com.example.activityjump.sonic;
+package com.example.activitylifecycle.sonic;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -25,7 +25,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 
-import com.example.activityjump.R;
+import com.example.activitylifecycle.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;

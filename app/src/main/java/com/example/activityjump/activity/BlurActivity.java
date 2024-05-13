@@ -1,4 +1,4 @@
-package com.example.activityjump.activity;
+package com.example.activitylifecycle.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -9,8 +9,8 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.activityjump.R;
-import com.example.activityjump.utils.DialogUtil;
+import com.example.activitylifecycle.R;
+import com.example.activitylifecycle.utils.DialogUtil;
 
 
 public class BlurActivity extends AppCompatActivity implements View.OnClickListener {

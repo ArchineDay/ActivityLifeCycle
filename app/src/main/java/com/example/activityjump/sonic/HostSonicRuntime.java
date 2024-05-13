@@ -11,7 +11,7 @@
  *
  */
 
-package com.example.activityjump.sonic;
+package com.example.activitylifecycle.sonic;
 
 import android.content.Context;
 import android.os.Build;

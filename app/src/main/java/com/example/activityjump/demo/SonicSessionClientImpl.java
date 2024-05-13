@@ -11,7 +11,7 @@
 // *
 // */
 //
-//package com.example.activityjump.demo;
+//package com.example.activitylifecycle.demo;
 //
 //import android.os.Bundle;
 //import android.webkit.WebView;

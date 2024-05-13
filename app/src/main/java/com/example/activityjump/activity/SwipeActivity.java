@@ -1,4 +1,4 @@
-package com.example.activityjump.activity;
+package com.example.activitylifecycle.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,8 +12,8 @@ import android.widget.Toast;
 
 import com.blankj.utilcode.util.AdaptScreenUtils;
 import com.blankj.utilcode.util.ToastUtils;
-import com.example.activityjump.R;
-import com.example.activityjump.utils.CacheDataManager;
+import com.example.activitylifecycle.R;
+import com.example.activitylifecycle.utils.CacheDataManager;
 
 public class SwipeActivity extends AppCompatActivity implements View.OnClickListener {
     TextView cache;

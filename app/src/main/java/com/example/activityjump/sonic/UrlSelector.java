@@ -11,7 +11,7 @@
  *
  */
 
-package com.example.activityjump.sonic;
+package com.example.activitylifecycle.sonic;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -29,8 +29,8 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.activityjump.R;
-import com.example.activityjump.sonic.UrlListAdapter;
+import com.example.activitylifecycle.R;
+import com.example.activitylifecycle.sonic.UrlListAdapter;
 
 
 public class UrlSelector {

@@ -1,4 +1,4 @@
-//package com.example.activityjump.activity;
+//package com.example.activitylifecycle.activity;
 //
 //import android.annotation.TargetApi;
 //import android.app.Activity;
@@ -19,10 +19,10 @@
 //import androidx.annotation.Nullable;
 //import androidx.compose.ui.unit.Density;
 //
-//import com.example.activityjump.R;
-//import com.example.activityjump.sonic.HostSonicRuntime;
-//import com.example.activityjump.sonic.SonicJavaScriptInterface;
-//import com.example.activityjump.sonic.SonicSessionClientImpl;
+//import com.example.activitylifecycle.R;
+//import com.example.activitylifecycle.sonic.HostSonicRuntime;
+//import com.example.activitylifecycle.sonic.SonicJavaScriptInterface;
+//import com.example.activitylifecycle.sonic.SonicSessionClientImpl;
 //import com.tencent.sonic.sdk.SonicConfig;
 //import com.tencent.sonic.sdk.SonicEngine;
 //import com.tencent.sonic.sdk.SonicSession;
