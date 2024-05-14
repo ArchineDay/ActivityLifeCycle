@@ -38,8 +38,10 @@ public class UrlListAdapter extends BaseAdapter {
     public static final int MODE_NORMAL = 1;
     public static final int MODE_EDIT = 2;
 
-//    private static final String DEFAULT_URL = "https://us.api.zopudt.com/omsv2/auth/login";
-    private static final String DEFAULT_URL = "https://www.baidu.com";
+//    private static final String DEFAULT_URL = "https://blog.csdn.net/";
+//    private static final String DEFAULT_URL = "http://192.168.5.29:5500/active_guide.html";
+    private static final String DEFAULT_URL = "http://192.168.5.65:10001/zhuopu/mobile/MainGuide";
+//    private static final String DEFAULT_URL = "https://www.bilibili.com";
 
     private ArrayList<String> urls;
     private LayoutInflater mInflater;

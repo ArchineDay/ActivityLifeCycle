@@ -93,6 +93,7 @@ public class HostSonicRuntime extends SonicRuntime {
 
     @Override
     public void notifyError(SonicSessionClient client, String url, int errorCode) {
+        Log.d("sonic", "error load url: " + url + " notifyError: " + errorCode);
 
     }
 
