@@ -79,5 +79,10 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation("com.android.support.constraint:constraint-layout:1.0.0-alpha7")
+    implementation("io.reactivex.rxjava3:rxjava:3.1.8")
+    implementation ("io.reactivex.rxjava3:rxandroid:3.0.0")
+    implementation ("com.squareup.okhttp3:okhttp:4.9.0")
+    implementation ("com.squareup.okio:okio:2.8.0")
+    implementation ("com.liulishuo.filedownloader:library:1.7.7")
 
 }

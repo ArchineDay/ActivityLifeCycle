@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.buttonToChronometer).setOnClickListener(this);
         findViewById(R.id.buttonToBlur).setOnClickListener(this);
         findViewById(R.id.buttonToVasonic).setOnClickListener(this);
+        findViewById(R.id.buttonToDownload).setOnClickListener(this);
         blurView = findViewById(R.id.realtimeBlurView);
 
         button1.setOnClickListener(this);
@@ -122,6 +123,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(this,BlurActivity.class));
         }else if (v.getId() ==R.id.buttonToVasonic){
             startActivity(new Intent(this, SonicActivity.class));
+        }else if (v.getId() ==R.id.buttonToDownload){
+            startActivity(new Intent(this, DownloadActivity.class));
         }
     }
 }

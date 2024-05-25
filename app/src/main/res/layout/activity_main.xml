@@ -88,4 +88,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Vasonic" />
+
+    <Button
+        android:id="@+id/buttonToDownload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="download" />
 </LinearLayout>
