@@ -40,9 +40,13 @@ public class DataManager {
     public long getSourceThread(String key,int threadId) {
         key = SOURCE_THREAD + key+threadId;
         SharedPreferences sdf = context.getSharedPreferences(SOURCE_THREAD, Context.MODE_PRIVATE);
-        long endPos = sdf.getLong(key, 0);
-        Log.d(TAG, "getSourceThread threadId:"+threadId);
-        return endPos;
+        if (sdf.contains(key)) {
+            long endPos = sdf.getLong(key, 0);
+            Log.d(TAG, "getSourceThread threadId:" + threadId);
+            return endPos;
+        } else {
+            return -1;
+        }
     }
 
 }

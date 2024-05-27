@@ -84,5 +84,7 @@ dependencies {
     implementation ("com.squareup.okhttp3:okhttp:4.9.0")
     implementation ("com.squareup.okio:okio:2.8.0")
     implementation ("com.liulishuo.filedownloader:library:1.7.7")
+    implementation ("com.liulishuo.okdownload:okdownload:1.0.7")
+
 
 }
