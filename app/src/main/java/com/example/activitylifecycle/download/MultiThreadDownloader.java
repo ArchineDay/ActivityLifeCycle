@@ -19,71 +19,87 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class MultiThreadDownload {
+public class MultiThreadDownloader {
 
     private static final String TAG = "MultiThreadDownload";
-    private static final int THREAD_COUNT = 4; // 线程数量
-    public static void downloadImage(String url, long length) throws IOException {
+    private static int threadCount;// 线程数量
+
+    public MultiThreadDownloader(int threadCount) {
+        MultiThreadDownloader.threadCount = threadCount;
+    }
+
+    public void downloadFile(String url, long length) throws IOException {
         Log.d(TAG, "文件大小" + length + "字节");
-        ExecutorService executorService = Executors.newFixedThreadPool(THREAD_COUNT);
+        ExecutorService executorService = Executors.newFixedThreadPool(threadCount);
 
         String dir = Environment.getExternalStorageDirectory() + File.separator + Environment.DIRECTORY_DCIM;
         Log.d("dir", dir);
 
         String imageName = "image.jpg";
-        RandomAccessFile file = new RandomAccessFile(dir+"/"+imageName, "rw");
+        RandomAccessFile file = new RandomAccessFile(dir + "/" + imageName, "rw");
 //        file.setLength(length);
-        if(file.length()<length && file.length()>0){
+        if (file.length() < length && file.length() > 0) {
             //文件不存在或不完整
-            for (int i = 0; i < THREAD_COUNT-1; i++) {
+            for (int i = 0; i < threadCount - 1; i++) {
                 long endPoint = DataManager.getInstance().getSourceThread(imageName, i);
-                if(endPoint<length) {
-                    Log.d(TAG,"endPoint<length endPoint:"+endPoint);
-                    int j=i+1;
-                    if(DataManager.getInstance().getSourceThread(imageName, j)==-1){
+                if (endPoint < length) {
+                    Log.d(TAG, "endPoint<length endPoint:" + endPoint);
+                    int j = i + 1;
+                    if (DataManager.getInstance().getSourceThread(imageName, j) == -1) {
                         Log.d(TAG, "线程" + j + "处于断点续传状态");
-                        long eachThreadSize = length / THREAD_COUNT;
+                        long eachThreadSize = length / threadCount;
                         long startPos = j * eachThreadSize;
-                        Log.d(TAG,"startpoint: "+startPos);
-                        long endPos = (j == THREAD_COUNT - 1) ? length : (j + 1) * eachThreadSize - 1;;
-                        Log.d(TAG, "续传线程："+j+" startPos: " + startPos + "字节" + "endPos: " + endPos + "字节");
+                        Log.d(TAG, "startpoint: " + startPos);
+                        long endPos = (j == threadCount - 1) ? length : (j + 1) * eachThreadSize - 1;
+                        ;
+                        Log.d(TAG, "续传线程：" + j + " startPos: " + startPos + "字节" + "endPos: " + endPos + "字节");
 
                         executorService.execute(new DownloadThread(url, imageName, file, startPos, endPos, j));
                     }
                 }
             }
-            shutDownThreadPool(executorService,file,30);
+            shutDownThreadPool(executorService, file, 30);
             return;
         }
         long filePointer = file.getFilePointer();
         Log.d("filePointer", String.valueOf(filePointer));
 
         // 计算每个线程下载的字节数
-        long eachThreadSize = length / THREAD_COUNT;
+        long eachThreadSize = length / threadCount;
         Log.d("eachThreadSize", eachThreadSize + "字节");
 
         // 创建线程池并启动线程
-        for (int i = 0; i < THREAD_COUNT; i++) {
+        for (int i = 0; i < threadCount; i++) {
             long startPos = i * eachThreadSize;
-            long endPos = (i == THREAD_COUNT - 1) ? length : (i + 1) * eachThreadSize - 1;
+            long endPos = (i == threadCount - 1) ? length : (i + 1) * eachThreadSize - 1;
             Log.d(TAG, "startPos: " + startPos + "字节" + "endPos: " + endPos + "字节");
 
-            executorService.execute(new DownloadThread(url,imageName, file, startPos, endPos, i));
+            executorService.execute(new DownloadThread(url, imageName, file, startPos, endPos, i));
         }
 
-        shutDownThreadPool(executorService,file,30);
+        shutDownThreadPool(executorService, file, 30);
 
     }
-    public static void shutDownThreadPool(ExecutorService threadPool, RandomAccessFile file, long timeout) {
+
+    // 获取url文件大小
+    public static long getFileSize(String url) throws IOException {
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder().url(url).build();
+        Response response = client.newCall(request).execute();
+        Log.d("Response Headers", "Content-Length: " + response.body().contentLength());
+        return response.body().contentLength();
+    }
+
+    private void shutDownThreadPool(ExecutorService threadPool, RandomAccessFile file, long timeout) {
 
         threadPool.shutdown();
 
         try {
             if (!threadPool.awaitTermination(timeout, TimeUnit.SECONDS)) {
                 threadPool.shutdownNow();
-            }else{
+            } else {
                 Log.d(TAG, "下载完成");
-                //todo:DataManger清理
+                DataManager.getInstance().clearSourceThread();
                 file.close();
             }
         } catch (InterruptedException e) {
@@ -104,7 +120,7 @@ public class MultiThreadDownload {
         private final int threadId;
         private static final Lock lock = new ReentrantLock();
 
-        public DownloadThread(String url,String imageName, RandomAccessFile file, long startPos, long endPos, int threadId) {
+        public DownloadThread(String url, String imageName, RandomAccessFile file, long startPos, long endPos, int threadId) {
             this.url = url;
             this.file = file;
             this.startPos = startPos;
@@ -143,7 +159,7 @@ public class MultiThreadDownload {
 
                 lock.unlock();
 
-                Log.d("线程", "线程: " + threadId +"已将 BufferedSource 写入文件的起始位置 " + startPos);
+                Log.d("线程", "线程: " + threadId + "已将 BufferedSource 写入文件位置 " + startPos);
 
             } catch (IOException e) {
                 e.printStackTrace();

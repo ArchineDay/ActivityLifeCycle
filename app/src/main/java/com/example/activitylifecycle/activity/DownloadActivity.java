@@ -8,11 +8,8 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.blankj.utilcode.util.PathUtils;
 import com.example.activitylifecycle.R;
-import com.example.activitylifecycle.download.FileDownloaderManager;
-import com.example.activitylifecycle.download.MultiThreadDownload;
-import com.liulishuo.filedownloader.FileDownloader;
+import com.example.activitylifecycle.download.MultiThreadDownloader;
 
 import java.io.IOException;
 
@@ -45,9 +42,10 @@ public class DownloadActivity extends AppCompatActivity {
         }
         btnDownload.setOnClickListener(v -> {
             try {
-                long fileSize = getFileSize(imageUrl);
+                long fileSize = MultiThreadDownloader.getFileSize(imageUrl);
                 if(fileSize > 0){
-                    MultiThreadDownload.downloadImage(imageUrl,fileSize);
+                    MultiThreadDownloader downloader = new MultiThreadDownloader(5);
+                    downloader.downloadFile(imageUrl,fileSize);
                 }else{
                     //单线程
                 }
@@ -61,12 +59,5 @@ public class DownloadActivity extends AppCompatActivity {
 
     }
 
-    // 获取文件大小
-    private  long getFileSize(String url) throws IOException {
-        OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder().url(url).build();
-        Response response = client.newCall(request).execute();
-        Log.d("Response Headers", "Content-Length: " + response.body().contentLength());
-        return response.body().contentLength();
-    }
+
 }

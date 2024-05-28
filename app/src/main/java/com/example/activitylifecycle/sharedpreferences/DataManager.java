@@ -28,17 +28,20 @@ public class DataManager {
         }
         return instance;
     }
+
     private final String SOURCE_THREAD = "SOURCE_THREAD";
+
     public void saveSourceThread(String key, int threadId, long endPos) {
-        Log.d(TAG, "saveSourceThread threadId:"+threadId+" endPos:"+endPos);
+        Log.d(TAG, "saveSourceThread threadId:" + threadId + " endPos:" + endPos);
         SharedPreferences sdf = context.getSharedPreferences(SOURCE_THREAD, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sdf.edit();
-        key = SOURCE_THREAD + key+threadId;
+        key = SOURCE_THREAD + key + threadId;
         editor.remove(key).putLong(key, endPos);
         editor.commit();
     }
-    public long getSourceThread(String key,int threadId) {
-        key = SOURCE_THREAD + key+threadId;
+
+    public long getSourceThread(String key, int threadId) {
+        key = SOURCE_THREAD + key + threadId;
         SharedPreferences sdf = context.getSharedPreferences(SOURCE_THREAD, Context.MODE_PRIVATE);
         if (sdf.contains(key)) {
             long endPos = sdf.getLong(key, 0);
@@ -47,6 +50,12 @@ public class DataManager {
         } else {
             return -1;
         }
+    }
+
+    public void clearSourceThread() {
+        SharedPreferences.Editor editor = context.getSharedPreferences(SOURCE_THREAD, Context.MODE_PRIVATE).edit();
+        editor.clear();
+        editor.commit();
     }
 
 }
