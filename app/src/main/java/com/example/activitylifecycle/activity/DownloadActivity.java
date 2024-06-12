@@ -2,15 +2,20 @@ package com.example.activitylifecycle.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.StrictMode;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.PathUtils;
+import com.blankj.utilcode.util.UriUtils;
 import com.example.activitylifecycle.R;
 import com.example.activitylifecycle.download.MultiThreadDownloader;
 
+import java.io.File;
 import java.io.IOException;
 
 import okhttp3.OkHttpClient;
@@ -23,7 +28,8 @@ public class DownloadActivity extends AppCompatActivity {
     private Button btnDownload;
 
     //    private String imageUrl = "https://filesamples.com/samples/image/bmp/sample_5184%C3%973456.bmp";
-    private String imageUrl = "http://192.168.5.76:5500/sample_5184%C3%973456.jpeg";
+//    private String imageUrl = "http://192.168.5.76:5500/sample_5184%C3%973456.jpeg";
+    private String imageUrl = "http://192.168.5.76:5500/DSCF0010.MOV";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
